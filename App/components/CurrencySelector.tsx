@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from "react-native";
-import { Blurred } from "./Blurred";
-import { Modal } from "./Modal";
+import { Blurred } from "@components/Blurred";
+import { Modal } from "@components/Modal";
 import { useState } from "react";
 import VALUES from "@data/Currencies.json";
 

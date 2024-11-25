@@ -1,6 +1,6 @@
 import { Text, View, ImageBackground, ActivityIndicator } from "react-native";
 import { Stats } from "@components/Stats";
-import { ApiFacade } from "App/services/CryptoAPI";
+import { ApiFacade } from "@services/CryptoAPI";
 import { useEffect, useState } from "react";
 import background from "@assets/holy.jpg";
 

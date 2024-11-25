@@ -5,6 +5,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["App/components/*"],
+      "@services/*": ["App/services/*"],
       "@data/*": ["App/data/*"],
       "@screens/*": ["App/screens/*"],
       "@svg/*": ["App/components/svg/*"],

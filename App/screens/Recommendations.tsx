@@ -1,6 +1,6 @@
 import { Text, View, ScrollView, ImageBackground } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Card } from "../components/Recommendations/Card";
+import { Card } from "@components/Recommendations/Card";
 import background from "@assets/holy.jpg";
 import recommendationsData from "@data/Recommendations.json";
 import { TypesRecommendations } from "@components/Recommendations/TypeRecommendations";

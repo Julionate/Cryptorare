@@ -1,6 +1,6 @@
 import { View, Text, Modal as ModalReact, Pressable } from "react-native";
-import IconClose from "./svg/IconClose";
-import { CurrencySelectorProps } from "./CurrencySelector";
+import IconClose from "@svg/IconClose";
+import { CurrencySelectorProps } from "@components/CurrencySelector";
 
 interface ValuesProps {
   currency: string;
