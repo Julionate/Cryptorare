@@ -1,0 +1,20 @@
+[
+  {
+    "product": "Exodus: Crypto Bitcoin Wallet",
+    "brand": "Exodus Movement, Inc.",
+    "description": "Exodus es una billetera de criptomonedas conocida por su interfaz fácil de usar, que soporta múltiples criptomonedas y tiene una integración de intercambio incorporada. Es una opción ideal para principiantes y ofrece tanto versión de escritorio como móvil.",
+    "urlLogo": "https://i.ibb.co/jvN1Pqk/d0y-tc6f3-BRd-Vodzpcqo-XYQSndvl-Mo-XXq-HAw-Hm-Dvzwgh-Rv-QO8-WGSM1-I8-l-HK-OUNVQ.png",
+    "urlWebsite": "https://www.exodus.com/",
+    "urlPlayStore": "https://play.google.com/store/apps/details?id=exodusmovement.exodus",
+    "urlAppStore": "https://apps.apple.com/us/app/exodus-crypto-bitcoin-wallet/id1414384820"
+  },
+  {
+    "product": "MetaMask - Blockchain Wallet",
+    "brand": "MetaMask",
+    "description": "MetaMask es una billetera de criptomonedas que funciona como una extensión del navegador o una aplicación móvil. Es especialmente popular para interactuar con la red Ethereum y DApps. Ofrece control completo sobre las claves privadas y permite la gestión de tokens ERC-20.",
+    "urlLogo": "https://play-lh.googleusercontent.com/8rzHJpfkdFwA0Lo6_CHUjoNt8OU3EyIe9BZNKGqj0C8BhleguW9LhXHbS46FAtLAJ9r2=s96",
+    "urlWebsite": "https://metamask.io/",
+    "urlPlayStore": "https://play.google.com/store/apps/details?id=io.metamask",
+    "urlAppStore": "https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202"
+  }
+]

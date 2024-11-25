@@ -6,7 +6,7 @@ export const Blurred: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <BlurView
       experimentalBlurMethod="dimezisBlurView"
-      intensity={30}
+      intensity={20}
       tint="light"
       className="w-max h-max overflow-hidden rounded-xl"
     >

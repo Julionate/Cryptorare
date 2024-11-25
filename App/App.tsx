@@ -1,70 +1,79 @@
-import { StatusBar } from "expo-status-bar";
-import { useEffect, useState } from "react";
-import {
-  View,
-  ImageBackground,
-  TextInput,
-  Text,
-  Pressable,
-  ActivityIndicator,
-} from "react-native";
-import { Blurred } from "./components/Blurred";
-import { CurrencySelector } from "./components/CurrencySelector";
-import background from "../assets/holy.jpg";
+import { Comparer } from "./screens/Comparer";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Recommendations } from "@screens/Recommendations";
+import { Results } from "@screens/Results";
+import { RootStackParamList } from "types/navigation";
+import IconHome from "@svg/IconHome";
+import IconBulb from "@svg/IconBulb";
 import "../global.css";
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
-  const [textInput, setTextInput] = useState<string | number>(0);
-  const [currentCurrency, setCurrentCurrency] = useState<string | null>("clp");
+  const Tab = createBottomTabNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
+
+  const HomeTabs = () => {
+    return (
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            if (route.name === "Home") {
+              return <IconHome width={size} height={size} fill={color} />;
+            } else if (route.name === "Recommendations") {
+              return <IconBulb width={size} height={size} fill={color} />;
+            }
+          },
+          tabBarActiveTintColor: "#c13a91",
+          tabBarInactiveTintColor: "gray",
+        })}
+      >
+        <Tab.Screen
+          name="Home"
+          component={Comparer}
+          options={{
+            headerShown: false,
+            tabBarStyle: {
+              backgroundColor: "black",
+              position: "absolute",
+              borderColor: "transparent",
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Recommendations"
+          component={Recommendations}
+          options={{
+            headerShown: false,
+            tabBarStyle: {
+              backgroundColor: "black",
+              borderColor: "transparent",
+              position: "absolute",
+            },
+          }}
+        />
+      </Tab.Navigator>
+    );
+  };
 
   return (
-    <View className="flex-1 justify-center items-center flex gap-2">
-      <ImageBackground
-        source={background}
-        onLoadEnd={() => setTimeout(() => setLoading(false), 500)}
-        className="flex-1 w-full h-full object-cover absolute"
-      />
-
-      <Text className="text-5xl text-white font-bold pb-10">Cryptorare</Text>
-
-      <View className="flex flex-row justify-center items-center gap-2">
-        <Blurred>
-          <TextInput
-            onChangeText={(text) => setTextInput(text)}
-            onSubmitEditing={() => console.log("subiendo")}
-            keyboardType="numeric"
-            className="w-80 h-16 flex px-2 text-xl text-white placeholder:opacity-50"
-            placeholderTextColor="white"
-            placeholder="Ingrese un valor"
-          ></TextInput>
-        </Blurred>
-
-        <CurrencySelector
-          currency={currentCurrency}
-          setCurrentCurrency={setCurrentCurrency}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="HomeTabs"
+          component={HomeTabs}
+          options={{ headerShown: false }}
         />
-      </View>
-
-      <Blurred>
-        <Pressable
-          className="w-56 h-16 rounded-xl flex  justify-center items-center"
-          onPress={() => console.log("subiendo")}
-        >
-          <Text className="text-xl text-white">Comparar</Text>
-        </Pressable>
-      </Blurred>
-
-      <StatusBar style="light" />
-
-      {loading ? (
-        <View className="flex-1 items-center justify-center h-full w-full absolute bg-white z-50">
-          <Text className="text-5xl text-black font-bold pb-10">
-            Cryptorare
-          </Text>
-          <ActivityIndicator color="black" size="large" />
-        </View>
-      ) : null}
-    </View>
+        <Stack.Screen
+          name="Resultados"
+          component={Results}
+          options={{
+            animation: "none",
+            headerTransparent: true,
+            headerTintColor: "white",
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
