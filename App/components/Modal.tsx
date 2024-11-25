@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { View, Text, Modal as ModalReact, Pressable } from "react-native";
 import IconClose from "./svg/IconClose";
 import { CurrencySelectorProps } from "./CurrencySelector";

@@ -2,6 +2,7 @@ import { View, Text, Pressable } from "react-native";
 import { Blurred } from "./Blurred";
 import { Modal } from "./Modal";
 import { useState } from "react";
+import VALUES from "@data/Currencies.json";
 
 export interface CurrencySelectorProps {
   currency: React.ComponentState;
@@ -21,14 +22,6 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = ({
   const closeModal = () => {
     setModalVisible(false);
   };
-
-  const VALUES = [
-    { currency: "clp", name: "Pesos Chilenos" },
-    { currency: "usd", name: "Dólares Estadounidenses" },
-    { currency: "btc", name: "BitCoin" },
-    { currency: "eth", name: "Etherium" },
-    { currency: "doge", name: "Doge Coin" },
-  ];
 
   return (
     <>

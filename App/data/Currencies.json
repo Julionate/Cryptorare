@@ -1,0 +1,6 @@
+[
+  { "currency": "clp", "name": "Pesos Chilenos" },
+  { "currency": "usd", "name": "Dólares Estadounidenses" },
+  { "currency": "btc", "name": "BitCoin" },
+  { "currency": "eth", "name": "Etherium" }
+]
