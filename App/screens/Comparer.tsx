@@ -40,7 +40,12 @@ export const Comparer = () => {
         <Blurred>
           <TextInput
             onChangeText={(text) => setTextInput(text)}
-            onSubmitEditing={() => console.log("subiendo")}
+            onSubmitEditing={() =>
+              navigation.navigate("Resultados", {
+                toConvert: textInput,
+                currency: currentCurrency,
+              })
+            }
             keyboardType="numeric"
             className="text-white w-80 h-16 flex px-2 text-xl placeholder:text-white/50"
             placeholderTextColor="white"

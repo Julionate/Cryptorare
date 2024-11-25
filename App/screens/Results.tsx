@@ -26,8 +26,6 @@ export const Results = ({ route }: ResultsProps) => {
   const [data, setData] = useState<TransformedData[]>([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(currency);
-
   useEffect(() => {
     const loadData = async () => {
       try {
