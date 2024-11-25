@@ -1,9 +1,10 @@
 import { View, Text, Pressable, Image } from "react-native";
 import ReadMore from "@fawazahmed/react-native-read-more";
-import IconWeb from "@svg/IconHome";
+import IconWeb from "@svg/IconWeb";
 import IconPlayStore from "@svg/IconPlayStore";
 import IconAppstore from "@svg/IconAppStore";
 import { TypesRecommendations } from "./TypeRecommendations";
+import { OpenUrl } from "App/services/OpenUrls";
 
 export const Card = ({
   product = "Nombre del Producto",
@@ -48,17 +49,17 @@ export const Card = ({
       </ReadMore>
       <View className="mt-auto pt-2 self-end flex-row gap-3">
         {urlWebsite ? (
-          <Pressable onPress={() => handleUrlPress(urlWebsite, "Website")}>
+          <Pressable onPress={() => OpenUrl.Website(urlWebsite)}>
             <IconWeb className="w-9 h-9 fill-gray-200" />
           </Pressable>
         ) : null}
         {urlPlayStore ? (
-          <Pressable onPress={() => handleUrlPress(urlPlayStore, "PlayStore")}>
+          <Pressable onPress={() => OpenUrl.Playstore(urlPlayStore)}>
             <IconPlayStore className="w-9 h-9 fill-gray-200" />
           </Pressable>
         ) : null}
         {urlAppStore ? (
-          <Pressable onPress={() => handleUrlPress(urlAppStore, "App Store")}>
+          <Pressable onPress={() => OpenUrl.Appstore(urlAppStore)}>
             <IconAppstore className="w-9 h-9 fill-gray-200" />
           </Pressable>
         ) : null}
