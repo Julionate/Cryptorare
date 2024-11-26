@@ -1,4 +1,10 @@
-import { View, Text, Modal as ModalReact, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  Modal as ModalReact,
+  Pressable,
+  StatusBar,
+} from "react-native";
 import IconClose from "@svg/IconClose";
 import { CurrencySelectorProps } from "@components/CurrencySelector";
 
@@ -19,6 +25,7 @@ export const Modal: React.FC<ModalProps> = ({
   onClose,
   setCurrentCurrency,
 }) => {
+  StatusBar.setBackgroundColor("#000000", true);
   const handleSetCurrency = (currency: string) => {
     setCurrentCurrency(currency);
     onClose();
