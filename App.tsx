@@ -1,4 +1,4 @@
-import { Comparer } from "./screens/Comparer";
+import { Comparer } from "@screens/Comparer";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -7,7 +7,7 @@ import { Results } from "@screens/Results";
 import { RootStackParamList } from "types/navigation";
 import IconHome from "@svg/IconHome";
 import IconBulb from "@svg/IconBulb";
-import "../global.css";
+import "./global.css";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
